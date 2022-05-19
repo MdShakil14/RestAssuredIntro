@@ -14,9 +14,17 @@ public class GetAndPostExamples {
         baseURI = "https://reqres.in/api";
         given().
                 get("/users?page=2").
-                then().
+        then().
                 body("data.first_name", hasItems("Byron", "George")).
                 body("data[5].last_name", equalTo("Howell"));
+    }
+    @Test
+    public void getExample2(){
+        baseURI = "https://reqres.in/api";
+
+        given().get("/users?page=2").then().
+                body("data[5].email",equalTo("rachel.howell@reqres.in")).
+                body("data.last_name",hasItems("Howell","Ferguson"));
     }
 
     @Test
@@ -39,5 +47,18 @@ public class GetAndPostExamples {
                 statusCode(201).
                 log().everything();
 
+    }
+
+    @Test
+    public void postExample2(){
+        baseURI = "https://reqres.in/api";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("Name","Sakib");
+        jsonObject.put("job","Student");
+
+        given().
+                contentType(ContentType.JSON).accept(ContentType.JSON).body(jsonObject.toJSONString()).
+        when().post("/users").
+        then().statusCode(201).log().everything();
     }
 }
