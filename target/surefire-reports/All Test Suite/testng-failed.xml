@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="D:/Coding/Automation Project/TESTNG DEMO 2/Maven project for rest assured/RestAssuredIntro(failed)" verbose="0">
+    <classes>
+      <class name="VideoGamesAPITesting.gamesAPITest">
+        <methods>
+          <include name="configReports"/>
+          <include name="editVideoGame"/>
+        </methods>
+      </class> <!-- VideoGamesAPITesting.gamesAPITest -->
+    </classes>
+  </test> <!-- D:/Coding/Automation Project/TESTNG DEMO 2/Maven project for rest assured/RestAssuredIntro(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
